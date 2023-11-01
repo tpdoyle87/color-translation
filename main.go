@@ -30,7 +30,7 @@ func main() {
 	fmt.Println(re.ReplaceAllStringFunc(string(buffer[:n]), convert(re)))
 }
 
-func convert() func(string) string {
+func convert(re *regexp.Regexp) func(string) string {
 	return func(s string) string {
 		return hex_to_dec(s)
 	}
